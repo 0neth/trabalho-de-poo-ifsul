@@ -14,15 +14,12 @@ public class receitas {
             String UserInputLista;
             ArrayList<String> receita = new ArrayList<String>(receitaPos);
             while (on == 1) {
-
                 System.out.println("insira o nome da receita");
                 UserInputLista = ler1.nextLine();
                 receita.add(UserInputLista);
-
                 System.out.println(receitaPos + ": " + receita.get(receitaPos));
                 receitaPos++;
                 System.out.println(receita);
-
                 try {
                     System.out.println("digite 0 se deseja desligar o programa");
                     on = ler1.nextInt();
@@ -42,12 +39,10 @@ public class receitas {
                         FileWriter escrever = new FileWriter("C:\\Users\\pedro\\Documents\\receitas.txt");
                         escrever.write("lista de receitas: " + receita);
                         escrever.close();
-
                     } catch (IOException c) {
                         System.out.println("Ocorreu um problema");
                         c.printStackTrace();
                     }
-
                 }
             }
         }
@@ -57,15 +52,12 @@ public class receitas {
             File novoaArquivo = new File("C:\\Users\\pedro\\Documents\\receitas.txt");
             if (novoaArquivo.createNewFile()) {
                 System.out.println("nova lista criada: " + novoaArquivo.getName());
-
             } else {
                 System.out.println("Arquivo ja existe");
-
             }
         } catch (IOException b) {
             System.out.println("Ocorreu um erro");
             b.printStackTrace();
         }
-
     }
 }
